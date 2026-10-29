@@ -52,16 +52,17 @@ class WizardTest {
         evilWizard.mana = 5
         // spellPower == 10
         evilWizard.train()
-        assertEquals(11, evilWizard.spellPower)
-        assertEquals(0, evilWizard.mana)
+        assertEquals(11, evilWizard.spellPower) // spellPower increased by 1
+        assertEquals(0, evilWizard.mana) // mana reduced to 0
     }
 
     @Test
     fun trainTest_doNotHaveEnoughMana() {
         evilWizard.mana = 2
         // spellPower == 10: remains as is
+        // mana wouldn't change either
         evilWizard.train()
         assertEquals(10, evilWizard.spellPower)
-        assertEquals(0, evilWizard.mana)
+        assertEquals(2, evilWizard.mana)
     }
 }
