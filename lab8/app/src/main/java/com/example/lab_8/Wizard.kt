@@ -26,9 +26,7 @@ class Wizard(val name: String, var mana: Int, var spellPower: Int) {
 
     fun train(): Int {
         if (mana >= 5) {
-            println(mana)
             mana -= 5
-            println(spellPower)
             spellPower++
             return spellPower
         } else {return spellPower}
